@@ -1,0 +1,5 @@
+dotnet new --list                                   -> yeni oluşturabileceğiniz proje template'lerini listeler
+dotnet add package Microsoft.EntityFrameworkCore    -> projeye paket eklemek için
+dotnet restore                                      -> indirilen paketleri restore etmek için
+dotnet sln add EmptyMVCApp\EmptyMVCApp.csproj       -> Proje dosyasını sln dosyasına refere eder.
+dotnet watch run --environment development          -> proje default olarak appsettings.json dosyasından derlenir, çalışma zamanında sizin belirttiğiniz dosyayı kullanmasını isterseniz environment belirtmeniz yeterlidir.
