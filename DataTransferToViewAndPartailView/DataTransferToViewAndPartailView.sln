@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferToViewAndPartailView", "DataTransferToViewAndPartailView\DataTransferToViewAndPartailView.csproj", "{8C15C57C-4B37-4356-B987-EBEC64DE132B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C15C57C-4B37-4356-B987-EBEC64DE132B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C15C57C-4B37-4356-B987-EBEC64DE132B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C15C57C-4B37-4356-B987-EBEC64DE132B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C15C57C-4B37-4356-B987-EBEC64DE132B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5166ADC3-5F98-4B22-A66B-1AA11AABB65F}
+	EndGlobalSection
+EndGlobal
