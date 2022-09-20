@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataTransferToViewAndPartailView.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace DataTransferToViewAndPartailView.Models
+namespace DataTransferToViewAndPartailView.Data
 {
     public partial class northwindContext : DbContext
     {

@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+ 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -18,7 +19,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Products}/{action=Index}/{id?}");
 
 app.Run();
 
@@ -34,9 +35,12 @@ Scaffold-DbContext "server=localhost,1433;database=northwind;uid=sa;pwd=Pro247!!
 
 
 
-
+dotnet tool install --global dotnet-aspnet-codegenerator
 
 dotnet-aspnet-codegenerator controller -name ProductsController -m Product -dc northwindDbContext --relativeFolderPath Controllers --useDefaultLayout   
 
+
+
+https://www.computerhope.com/unix/ush.htm
 
  */

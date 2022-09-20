@@ -1,0 +1,1 @@
+echo "The name of this script is `basename $0`."

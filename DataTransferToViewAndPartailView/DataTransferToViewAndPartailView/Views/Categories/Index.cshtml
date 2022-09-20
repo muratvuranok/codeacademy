@@ -1,53 +1,24 @@
-﻿@model IEnumerable<DataTransferToViewAndPartailView.Models.Category>
-
+﻿@*@model IEnumerable<CategoryVM>*@
+@model Tuple<IEnumerable<CategoryVM>,IEnumerable<CategoryVM>,IEnumerable<CategoryVM>,IEnumerable<CategoryVM>, string , DateTime >
 @{
     ViewData["Title"] = "Index";
 }
+ <h1 class="display-1"> @Model.Item5  </h1>
+<h1 class="display-1">  @Model.Item6 </h1> 
 
-<h1>Index</h1>
+@*<h1 class="display-1"> @ViewData["CodeEdu"]  </h1>
+<h1 class="display-1"> @TempData["CodeEduAz"]</h1>*@
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+@*<a asp-action="create">Create</a>
+</br>*@
 <div class="row">
-    <div class="col mt-5"> 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Picture)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Picture)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-    </div>
+    @Html.Partial("_CategoryListPartialView",Model.Item1)
+    <partial name="_CategoryListPartialView" model="Model.Item2" />
+    <partial name="_CategoryListPartialView" model="Model.Item3" />
+    <partial name="_CategoryListPartialView" model="Model.Item4" />
+    @*@Html.Partial("_CategoryListPartialView", (IEnumerable<CategoryVM>)ViewData["CategoriesViewData"])*@
+    @*    <partial name="_CategoryListPartialView" model='(IEnumerable<CategoryVM>)ViewData["CategoriesViewData"]' />
+    <partial name="_CategoryListPartialView" model='(IEnumerable<CategoryVM>)TempData["CategoriesTepmData"]' />
+    <partial name="_CategoryListPartialView" model="ViewBag.CategoriesViewBag" />*@
 </div>
