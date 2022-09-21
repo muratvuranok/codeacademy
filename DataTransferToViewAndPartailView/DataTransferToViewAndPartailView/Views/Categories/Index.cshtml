@@ -3,9 +3,9 @@
 @{
     ViewData["Title"] = "Index";
 }
- <h1 class="display-1"> @Model.Item5  </h1>
+@* <h1 class="display-1"> @Model.Item5  </h1>
 <h1 class="display-1">  @Model.Item6 </h1> 
-
+*@
 @*<h1 class="display-1"> @ViewData["CodeEdu"]  </h1>
 <h1 class="display-1"> @TempData["CodeEduAz"]</h1>*@
 
@@ -14,11 +14,17 @@
 </br>*@
 <div class="row">
     @Html.Partial("_CategoryListPartialView",Model.Item1)
-    <partial name="_CategoryListPartialView" model="Model.Item2" />
+ @*   <partial name="_CategoryListPartialView" model="Model.Item2" />
     <partial name="_CategoryListPartialView" model="Model.Item3" />
-    <partial name="_CategoryListPartialView" model="Model.Item4" />
+    <partial name="_CategoryListPartialView" model="Model.Item4" />*@
     @*@Html.Partial("_CategoryListPartialView", (IEnumerable<CategoryVM>)ViewData["CategoriesViewData"])*@
     @*    <partial name="_CategoryListPartialView" model='(IEnumerable<CategoryVM>)ViewData["CategoriesViewData"]' />
     <partial name="_CategoryListPartialView" model='(IEnumerable<CategoryVM>)TempData["CategoriesTepmData"]' />
     <partial name="_CategoryListPartialView" model="ViewBag.CategoriesViewBag" />*@
 </div>
+
+
+    @section css{
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    }
