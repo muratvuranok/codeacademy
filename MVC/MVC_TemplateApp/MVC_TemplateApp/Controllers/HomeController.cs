@@ -14,8 +14,28 @@ namespace MVC_TemplateApp.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
+        { 
+            var products = new List<Product>
+            {
+                new Product {
+                    Name = "Fresh organic kiwi",
+                    StartPrice = 10.00M,
+                    Price = 70.99M,
+                    Rate = 4,
+                    ProductPhotos = new List<ProductPhoto >{
+                        new ProductPhoto
+                            {
+                                Url = "/images/products/product-image-2-1.jpg"
+                            },
+                        new ProductPhoto
+                            {
+                                Url = "/images/products/product-image-2-2.jpg"
+                            }
+                    }
+                } 
+            };
+             
+            return View(products);
         }
 
         public IActionResult Privacy()

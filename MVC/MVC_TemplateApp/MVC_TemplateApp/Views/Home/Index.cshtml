@@ -1,8 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-
+@model IEnumerable<Product>
 <main>
     <!-- Slider Main Start -->
     <section class="hero-slider-one-active">
@@ -89,204 +88,176 @@
                 </div>
             </div>
             <div class="product-slider-active product-border-box">
-                <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-2-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-2-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Fresh organic kiwi</a></h6>
-                        <div class="single-product-item-price">
-                            $10.00 - $70.00
-                        </div>
-                    </div>
+                @foreach (Product product in Model)
+                {
+                    <partial model="product" name="_SingleProductPartialView" />
+                }
+                @*           <div class="single-product-item">
+                <div class="single-product-item-image">
+                <a href="product-details.html" class="prodcut-images">
+                <img class="primary-image" src="/images/products/product-image-1-1.jpg" alt="">
+                <img class="secondary-image" src="/images/products/product-image-1-2.jpg" alt="">
+                </a>
+                <ul class="single-product-item-action">
+                <li class="single-product-item-action-list">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
+                </li>
+                <li class="single-product-item-action-list">
+                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                </li>
+                <li class="single-product-item-action-list product-cart">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                </li>
+                </ul>
+                </div>
+
+                <div class="single-product-item-content">
+                <div class="single-product-item-rating">
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid"></i>
+                </div>
+                <h6 class="single-product-item-title"><a href="product-details.html">Dried mango</a></h6>
+                <div class="single-product-item-price">
+                $10.00 - $70.00
+                </div>
+                </div>
                 </div>
                 <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-1-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-1-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="single-product-item-image">
+                <a href="product-details.html" class="prodcut-images">
+                <img class="primary-image" src="/images/products/product-image-3-1.jpg" alt="">
+                <img class="secondary-image" src="/images/products/product-image-3-2.jpg" alt="">
+                </a>
+                <ul class="single-product-item-action">
+                <li class="single-product-item-action-list">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
+                </li>
+                <li class="single-product-item-action-list">
+                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                </li>
+                <li class="single-product-item-action-list product-cart">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                </li>
+                </ul>
+                </div>
 
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Dried mango</a></h6>
-                        <div class="single-product-item-price">
-                            $10.00 - $70.00
-                        </div>
-                    </div>
+                <div class="single-product-item-content">
+                <div class="single-product-item-rating">
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid"></i>
+                </div>
+                <h6 class="single-product-item-title"><a href="product-details.html">Dried banana</a></h6>
+                <div class="single-product-item-price">
+                $60.00 - $80.00
+                </div>
+                </div>
                 </div>
                 <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-3-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-3-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="single-product-item-image">
+                <a href="product-details.html" class="prodcut-images">
+                <img class="primary-image" src="/images/products/product-image-4-1.jpg" alt="">
+                <img class="secondary-image" src="/images/products/product-image-4-2.jpg" alt="">
+                </a>
+                <ul class="single-product-item-action">
+                <li class="single-product-item-action-list">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
+                </li>
+                <li class="single-product-item-action-list">
+                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                </li>
+                <li class="single-product-item-action-list product-cart">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                </li>
+                </ul>
+                </div>
 
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Dried banana</a></h6>
-                        <div class="single-product-item-price">
-                            $60.00 - $80.00
-                        </div>
-                    </div>
+                <div class="single-product-item-content">
+                <div class="single-product-item-rating">
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid"></i>
+                </div>
+                <h6 class="single-product-item-title"><a href="product-details.html">Crunchy crisps</a></h6>
+                <div class="single-product-item-price">
+                $50.00 - $90.00
+                </div>
+                </div>
                 </div>
                 <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-4-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-4-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="single-product-item-image">
+                <a href="product-details.html" class="prodcut-images">
+                <img class="primary-image" src="/images/products/product-image-5-1.jpg" alt="">
+                <img class="secondary-image" src="/images/products/product-image-5-2.jpg" alt="">
+                </a>
+                <ul class="single-product-item-action">
+                <li class="single-product-item-action-list">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
+                </li>
+                <li class="single-product-item-action-list">
+                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                </li>
+                <li class="single-product-item-action-list product-cart">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                </li>
+                </ul>
+                </div>
 
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Crunchy crisps</a></h6>
-                        <div class="single-product-item-price">
-                            $50.00 - $90.00
-                        </div>
-                    </div>
+                <div class="single-product-item-content">
+                <div class="single-product-item-rating">
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid"></i>
+                </div>
+                <h6 class="single-product-item-title"><a href="product-details.html">Jewel cranberries</a></h6>
+                <div class="single-product-item-price">
+                $60.00 - $67.00
+                </div>
+                </div>
                 </div>
                 <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-5-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-5-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Jewel cranberries</a></h6>
-                        <div class="single-product-item-price">
-                            $60.00 - $67.00
-                        </div>
-                    </div>
+                <div class="single-product-item-image">
+                <a href="product-details.html" class="prodcut-images">
+                <img class="primary-image" src="/images/products/product-image-6-1.jpg" alt="">
+                <img class="secondary-image" src="/images/products/product-image-6-2.jpg" alt="">
+                </a>
+                <ul class="single-product-item-action">
+                <li class="single-product-item-action-list">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
+                </li>
+                <li class="single-product-item-action-list">
+                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                </li>
+                <li class="single-product-item-action-list product-cart">
+                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                </li>
+                </ul>
                 </div>
-                <div class="single-product-item">
-                    <div class="single-product-item-image">
-                        <a href="product-details.html" class="prodcut-images">
-                            <img class="primary-image" src="/images/products/product-image-6-1.jpg" alt="">
-                            <img class="secondary-image" src="/images/products/product-image-6-2.jpg" alt="">
-                        </a>
-                        <ul class="single-product-item-action">
-                            <li class="single-product-item-action-list">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-heart2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list">
-                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
-                            </li>
-                            <li class="single-product-item-action-list product-cart">
-                                <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="single-product-item-content">
-                        <div class="single-product-item-rating">
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid select-star"></i>
-                            <i class="icon-rt-star-solid"></i>
-                        </div>
-                        <h6 class="single-product-item-title"><a href="product-details.html">Fresh Broccoli</a></h6>
-                        <div class="single-product-item-price">
-                            $60.00 - $68.00
-                        </div>
-                    </div>
+                <div class="single-product-item-content">
+                <div class="single-product-item-rating">
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid select-star"></i>
+                <i class="icon-rt-star-solid"></i>
                 </div>
+                <h6 class="single-product-item-title"><a href="product-details.html">Fresh Broccoli</a></h6>
+                <div class="single-product-item-price">
+                $60.00 - $68.00
+                </div>
+                </div>
+                </div>*@
             </div>
         </div>
     </section>
