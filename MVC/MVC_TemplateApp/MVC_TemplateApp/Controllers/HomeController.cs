@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MVC_TemplateApp.Data;
 using MVC_TemplateApp.Models;
 using System.Diagnostics;
 
@@ -7,9 +9,10 @@ namespace MVC_TemplateApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MyContext _context;
+        public HomeController(ILogger<HomeController> logger, MyContext context)
         {
+            _context = context;
             _logger = logger;
         }
 
@@ -35,7 +38,7 @@ namespace MVC_TemplateApp.Controllers
                 } 
             };
              
-            return View(products);
+            return View(_context.Products.Include(i => i.ProductPhotos).ToList());
         }
 
         public IActionResult Privacy()
@@ -50,3 +53,11 @@ namespace MVC_TemplateApp.Controllers
         }
     }
 }
+//Akbank.
+//Agesa.
+//Akçansa.
+//Aksigorta.
+//Ak Yatırım.
+//Brisa.
+//Carrefoursa.
+//Çimsa.

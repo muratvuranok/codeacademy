@@ -1,4 +1,7 @@
-﻿namespace MVC_TemplateApp.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MVC_TemplateApp.Models;
 
 public class Product
 {
@@ -9,19 +12,12 @@ public class Product
 
     public Guid Id { get; set; }
     public string Name { get; set; } = null!;
+    [Column(TypeName = "decimal(18,2)")]
     public decimal StartPrice { get; set; }
+    [Column(TypeName = "decimal(18,2)")]
     public decimal Price { get; set; }
     public double Rate { get; set; }
     public virtual ICollection<ProductPhoto> ProductPhotos { get; set; }
-}
-
-
-public class ProductPhoto
-{
-    public Guid Id { get; set; }
-    public Guid ProductId { get; set; }
-    public Product Product { get; set; } = null!;
-    public string Url { get; set; } = null!;
 }
 
  
