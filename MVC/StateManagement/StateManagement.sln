@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagement.Session_", "StateManagement.Session_\StateManagement.Session_.csproj", "{BF9E552F-FC66-4135-8DA1-433FCF78499A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateManagement.Session_", "StateManagement.Session_\StateManagement.Session_.csproj", "{BF9E552F-FC66-4135-8DA1-433FCF78499A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagement.Cookie_", "StateManagement.Cookie_\StateManagement.Cookie_.csproj", "{49B39AB3-D931-4FC2-AA99-979C3577442C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagement.Cache_", "StateManagement.Cache_\StateManagement.Cache_.csproj", "{9447A0B6-50AA-40B9-917F-33796830D3DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BF9E552F-FC66-4135-8DA1-433FCF78499A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF9E552F-FC66-4135-8DA1-433FCF78499A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF9E552F-FC66-4135-8DA1-433FCF78499A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B39AB3-D931-4FC2-AA99-979C3577442C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B39AB3-D931-4FC2-AA99-979C3577442C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B39AB3-D931-4FC2-AA99-979C3577442C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B39AB3-D931-4FC2-AA99-979C3577442C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9447A0B6-50AA-40B9-917F-33796830D3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9447A0B6-50AA-40B9-917F-33796830D3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9447A0B6-50AA-40B9-917F-33796830D3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9447A0B6-50AA-40B9-917F-33796830D3DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

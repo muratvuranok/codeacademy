@@ -14,15 +14,15 @@ namespace StateManagement.Session_.Controllers
         List<Product> products = new()
         {
             new Product {Id = 17, ProductName = "Alice Mutton"},
-            new Product {Id = 3, ProductName = "Aniseed Syrup"},
+            new Product {Id = 3,  ProductName = "Aniseed Syrup"},
             new Product {Id = 40, ProductName = "Boston Crab Meat"},
             new Product {Id = 60, ProductName = "Camembert Pierrot"},
             new Product {Id = 18, ProductName = "Carnarvon Tigers"},
-            new Product {Id = 1, ProductName = "Chai"},
-            new Product {Id = 2, ProductName = "Chang"},
+            new Product {Id = 1,  ProductName = "Chai"},
+            new Product {Id = 2,  ProductName = "Chang"},
             new Product {Id = 39, ProductName = "Chartreuse verte"},
-            new Product {Id = 4, ProductName = "Chef Anton's Cajun Seasoning"},
-            new Product {Id = 5, ProductName = "Chef Anton's Gumbo Mix"},
+            new Product {Id = 4,  ProductName = "Chef Anton's Cajun Seasoning"},
+            new Product {Id = 5,  ProductName = "Chef Anton's Gumbo Mix"},
             new Product {Id = 48, ProductName = "Chocolade"},
             new Product {Id = 38, ProductName = "Côte de Blaye"},
             new Product {Id = 58, ProductName = "Escargots de Bourgogne"},
@@ -32,7 +32,7 @@ namespace StateManagement.Session_.Controllers
             new Product {Id = 15, ProductName = "Genen Shouyu"},
             new Product {Id = 56, ProductName = "Gnocchi di nonna Alice"},
             new Product {Id = 31, ProductName = "Gorgonzola Telino"},
-            new Product {Id = 6, ProductName = "Grandma's Boysenberry Spread"},
+            new Product {Id = 6,  ProductName = "Grandma's Boysenberry Spread"},
             new Product {Id = 37, ProductName = "Gravad lax"},
             new Product {Id = 24, ProductName = "Guaraná Fantástica"},
             new Product {Id = 69, ProductName = "Gudbrandsdalsost"},
@@ -52,10 +52,10 @@ namespace StateManagement.Session_.Controllers
             new Product {Id = 51, ProductName = "Manjimup Dried Apples"},
             new Product {Id = 32, ProductName = "Mascarpone Fabioli"},
             new Product {Id = 49, ProductName = "Maxilaku"},
-            new Product {Id = 9, ProductName = "Mishi Kobe Niku"},
+            new Product {Id = 9,  ProductName = "Mishi Kobe Niku"},
             new Product {Id = 72, ProductName = "Mozzarella di Giovanni"},
             new Product {Id = 30, ProductName = "Nord-Ost Matjeshering"},
-            new Product {Id = 8, ProductName = "Northwoods Cranberry Sauce"},
+            new Product {Id = 8,  ProductName = "Northwoods Cranberry Sauce"},
             new Product {Id = 25, ProductName = "NuNuCa Nuß-Nougat-Creme"},
             new Product {Id = 77, ProductName = "Original Frankfurter grüne Soße"},
             new Product {Id = 78, ProductName = "Original Frankfurter grüne Soße"},
@@ -86,7 +86,7 @@ namespace StateManagement.Session_.Controllers
             new Product {Id = 14, ProductName = "Tofu"},
             new Product {Id = 54, ProductName = "Tourtière"},
             new Product {Id = 23, ProductName = "Tunnbröd"},
-            new Product {Id = 7, ProductName = "Uncle Bob's Organic Dried Pears"},
+            new Product {Id = 7,  ProductName = "Uncle Bob's Organic Dried Pears"},
             new Product {Id = 79, ProductName = "Ürün Adı"},
             new Product {Id = 80, ProductName = "Ürün Adı"},
             new Product {Id = 81, ProductName = "Ürün Adı"},
@@ -146,10 +146,10 @@ namespace StateManagement.Session_.Controllers
 
         public IActionResult Create()
         {
-             
+
             // SendSms(GenerateCode()); 
 
-            return Ok(userCreate);
+            return Ok();
         }
 
 

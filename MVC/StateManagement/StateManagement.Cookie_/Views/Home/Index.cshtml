@@ -1,0 +1,56 @@
+﻿@* div.row.mt-5>div.col>(h1.display-4)+(h1.display-4)+(p>a.link[href="https://google.com"]{Text})+(p) *@
+@{
+    ViewData["Title"] = "Home Page";
+    string[] items = { "C#", "Java", "Python", "C++", "C", "Ruby", "PHP", "GROOVY" };
+
+}
+
+@model string
+
+@if (!string.IsNullOrWhiteSpace(Model))
+{
+    <div class="row mt-5">
+        <div class="col">
+            <h1 class="display-4">Kullandığınız Yazılım Dili</h1>
+            <hr>
+            <h1 class="display-4 text-center rounded shadow-sm bg-warning p-3">@Model</h1>
+            <p>Yeni bir seçim için (clear) <a asp-action="clear"  >tıklayınız</a></p>
+            <br>
+            <p>Yeni bir seçim için (remove) <a asp-action="remove" asp-route-id="survey">tıklayınız</a></p>
+            <p></p>
+        </div>
+    </div>
+}
+else
+{
+    @*<form asp-action="index">*@
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 border-bottom pb-2">
+                    Hangi yazılım dilini kullanıyorsunuz!
+                </h1>
+            </div>
+        </div>
+
+        <div class="row row-cols-4 mt-5 shadow-sm">
+            @{
+                foreach (var item in items)
+                {
+                    <div class="col mt-3">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio p-3">
+                                <input id="@item" type="radio" class="custom-control-radio" value="@item" name="survey">
+                                <label for="@item" class="custom-control-label ">@item</label>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-12">
+                    <button class="btn btn-outline-dark btn-sm mb-3 mt-5 float-end" type="submit">Kaydet</button>
+                </div>
+            }
+        </div>
+    </form>
+}

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<StateManagement.Session_.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row mt-5 shadow-sm">
+    <div class="col ">
+        <table class="table">
+            <thead>
+                <tr>
+                    @*         <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*            <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                    </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            <form asp-action="index"> 
+                                <input type="hidden" name="ProductName" value="@item.ProductName">
+                                <input type="hidden" name="Id" value="@item.Id">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Kaydet</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
