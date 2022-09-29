@@ -1,7 +1,12 @@
-﻿global using Microsoft.AspNetCore.Mvc;
-global using WebApiSample.Data;
+﻿global using AutoMapper;
+global using FluentValidation;
+global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
-global using WebApiSample.Models;
-global using AutoMapper;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Migrations;
+global using System.Reflection;
+global using WebApiSample.Data;
 global using WebApiSample.Dtos.CategoryDtos;
+global using WebApiSample.Models;
+global using WebApiSample.Resources;
 global using M = WebApiSample.Models;
