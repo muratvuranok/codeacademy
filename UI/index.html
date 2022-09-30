@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script>
+        $(() => {
+            (function Insert() {
+                $.ajax({
+                    url: 'http://localhost:5135/api/v1/categories',
+                    type: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: 'json',
+                    data: JSON.stringify({
+                        categoryName: 'Kategori Adı',
+                        description: 'Açıklama'
+                    }),
+                    success: () => { },
+                    error: () => { }
+                })
+            }
+
+
+            )();
+
+            (() => {
+                $.getJSON('http://localhost:5135/api/v1/categories', (data) => {
+                    $.each(data, (key, value) => { console.log(value) })
+                })
+            })();
+        })
+    </script>
+</body>
+
+</html>

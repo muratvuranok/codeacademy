@@ -2,19 +2,22 @@
 
 [Route("api/[controller]")]
 [ApiController]
-public class CategoriesController : ControllerBase
+public class Categories1Controller : ControllerBase
 {
 
     private readonly IMapper _mapper;
     private readonly NorthwindContext _northwindContext;
     private IValidator<CategoryCreateDto> _validator;
-    public CategoriesController(NorthwindContext northwindContext, IMapper mapper, IValidator<CategoryCreateDto> validator)
+    public Categories1Controller(NorthwindContext northwindContext, IMapper mapper, IValidator<CategoryCreateDto> validator)
     {
         this._mapper = mapper;
         this._northwindContext = northwindContext;
         this._validator = validator;
     }
 
+    #region Old
+
+    /*
 
     [HttpGet]
     public async Task<IEnumerable<CategoryDto>> Get()
@@ -97,4 +100,13 @@ public class CategoriesController : ControllerBase
         [FromHeader]
         public string? Server { get; set; }
     }
+    */
+
+    #endregion
+     
+
+
+    // CRUD
+
+   
 }
