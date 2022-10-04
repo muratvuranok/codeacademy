@@ -9,6 +9,7 @@ public static class ConfigurationServices
 
 
         serviceCollection.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+        serviceCollection.AddScoped<ApplicationDbContextInitialiser>();
 
         serviceCollection
              .AddDefaultIdentity<ApplicationUser>()

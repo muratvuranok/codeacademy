@@ -1,2 +1,4 @@
-﻿namespace Code.Infrastructure.Identity; 
-public class ApplicationUser : IdentityUser { }
+﻿namespace Code.Infrastructure.Identity;
+public class ApplicationUser : IdentityUser
+{ 
+}

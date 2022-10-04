@@ -1,5 +1,5 @@
 ﻿namespace Code.Infrastructure.Persistence;
-public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
+public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser >, IApplicationDbContext
 {
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
@@ -7,7 +7,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
     {
 
     }
-
+     
     public virtual DbSet<Category> Categories { get; set; } = null!;
     public virtual DbSet<Product> Products { get; set; } = null!;
 
