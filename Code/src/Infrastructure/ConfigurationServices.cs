@@ -1,8 +1,13 @@
-﻿namespace Code.Infrastructure;
+﻿using Code.Infrastructure.Persistence.Interceptors;
+
+namespace Code.Infrastructure;
 public static class ConfigurationServices
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection serviceCollection, IConfiguration configuration)
     {
+
+        serviceCollection.AddScoped<AuditableEntitySaveChangesInterceptor>();
+
         serviceCollection.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                    builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));

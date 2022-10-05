@@ -1,4 +1,6 @@
-﻿namespace Code.Application.Categories.Commands.UpdateCategory;
+﻿using Code.Application.Common.Exceptions;
+
+namespace Code.Application.Categories.Commands.UpdateCategory;
 public class UpdateCategoryCommand : IRequest
 {
     public int Id { get; set; }
@@ -21,7 +23,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
 
         if (entity == null)
         {
-            throw new Exception(""); // TODO: NotFoundException sınıfı hazırlanacak
+            throw new NotFoundException("UpdateCategoryCommand");  
         }
 
         entity.CategoryName = request.CategoryName;

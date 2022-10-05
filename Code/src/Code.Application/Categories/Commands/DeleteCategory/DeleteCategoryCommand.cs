@@ -1,4 +1,6 @@
-﻿namespace Code.Application.Categories.Commands.DeleteCategory;
+﻿using Code.Application.Common.Exceptions;
+
+namespace Code.Application.Categories.Commands.DeleteCategory;
 public record DeleteCategoryCommand(int Id) : IRequest;
 public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand>
 {
@@ -15,7 +17,7 @@ public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryComman
 
         if (entity == null)
         {
-            throw new Exception(""); // TODO: Bu alan NotfoundException olarak düzenlenecek
+            throw new NotFoundException(nameof(DeleteCategoryCommand), request.Id);
         }
 
         _context.Categories.Remove(entity);

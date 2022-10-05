@@ -1,11 +1,17 @@
 using Code.Application;
 using Code.Infrastructure;
 using Code.Infrastructure.Persistence;
+using Code.WebApi.Filters;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add<ApiExceptionFilterAttribute>());
+
+builder.Services.AddFluentValidationAutoValidation(configuration => configuration.DisableDataAnnotationsValidation = false)
+    .AddFluentValidationClientsideAdapters();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -29,8 +35,9 @@ if (app.Environment.IsDevelopment())
     }
 }
 
-app.UseAuthentication();
-app.UseIdentityServer();
+//app.UseAuthentication();
+//app.UseIdentityServer();
+
 app.UseAuthorization();
 
 app.MapControllers();
