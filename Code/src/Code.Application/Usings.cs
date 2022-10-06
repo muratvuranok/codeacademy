@@ -1,4 +1,5 @@
 ﻿global using Code.Application.Common.Interfaces;
+global using Code.Application.Common.Models;
 global using Code.Domain.Entities;
 global using FluentValidation;
 global using MediatR;

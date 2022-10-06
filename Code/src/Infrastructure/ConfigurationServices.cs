@@ -25,10 +25,11 @@ public static class ConfigurationServices
             .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
         serviceCollection.AddTransient<IDateTime, DateTimeService>();
+        serviceCollection.AddTransient<IIdentityService, IdentityService>();
 
         serviceCollection.AddAuthentication()
             .AddIdentityServerJwt();
-         
+
         return serviceCollection;
     }
 }
