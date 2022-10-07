@@ -1,4 +1,5 @@
 ﻿using Code.Application.Common.Models;
+using Code.Application.Dtos.User;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Code.Infrastructure.Identity;
@@ -60,6 +61,14 @@ public class IdentityService : IIdentityService
         return result.ToApplicationResult();
     }
 
+    public async Task<IEnumerable<UserDto>> GetAll()
+    {
+        return await _userManager.Users.Select(u => new UserDto
+        {
+            UserName = u.UserName,
+            Email = u.Email
+        }).ToListAsync();
+    }
 
     public async Task<string> GetUserNameAsync(string userId)
     {

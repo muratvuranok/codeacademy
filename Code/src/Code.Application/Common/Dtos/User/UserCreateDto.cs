@@ -1,4 +1,4 @@
-﻿namespace Code.Infrastructure.Dtos.User;
+﻿namespace Code.Application.Dtos.User;
 
 public class UserCreateDto
 {

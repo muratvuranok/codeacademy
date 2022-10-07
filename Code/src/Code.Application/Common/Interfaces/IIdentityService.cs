@@ -1,4 +1,6 @@
-﻿namespace Code.Application.Common.Interfaces; 
+﻿using Code.Application.Dtos.User;
+
+namespace Code.Application.Common.Interfaces;
 public interface IIdentityService
 {
     Task<string> GetUserNameAsync(string userId);
@@ -6,4 +8,5 @@ public interface IIdentityService
     Task<bool> AuthorizeAsync(string userId, string policyName);
     Task<(Result Result, string UserId)> CreateUserAsync(string userName, string password);
     Task<Result> DeleteUserAsync(string userId);
+    Task<IEnumerable<UserDto>> GetAll();
 }

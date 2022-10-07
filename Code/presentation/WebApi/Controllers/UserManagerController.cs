@@ -1,5 +1,5 @@
 ﻿using Code.Application.Common.Interfaces;
-using Code.Infrastructure.Dtos.User;
+using Code.Application.Dtos.User;
 using System.Net;
 
 namespace Code.WebApi.Controllers;
@@ -25,12 +25,24 @@ public class UserManagerController : ApiBaseController
         {
             return Ok(new
             {
-                StatusCode = HttpStatusCode.Created,
-                UserId = result.UserId,
-                Message = "User Created"
+                statusCode = HttpStatusCode.Created,
+                userId = result.UserId,
+                message = "User Created"
             });
         }
 
         return Ok(result.Result.Errors);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var users = await _identityService.GetAll();
+        return Ok(new
+        {
+            result = users,
+            statusCode = HttpStatusCode.OK,
+            message = "User List"
+        });
     }
 }
