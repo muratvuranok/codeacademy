@@ -1,0 +1,11 @@
+﻿ docker run --name my-redis -p 5002:6379 -d redis       -> Redis image'ı indirip my-redis adında bir container oluşturur
+
+
+
+ docker exec -it my-redis sh                            -> redis için oluşturduğunuz container'a bağlanırsınız
+
+ redis-cli                                              -> redis cli ekranına bağlanırsınız
+
+
+ redis = dictionary
+ set key value    -> redis'e data atmak için key -> dataya ulaşabilmek için anahtar kelime, value o anahtar kelimenin karşılığı olan data
