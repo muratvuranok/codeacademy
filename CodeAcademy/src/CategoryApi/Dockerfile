@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Gateway/Gateway.csproj", "src/Gateway/"]
-RUN dotnet restore "src/Gateway/Gateway.csproj"
+COPY ["src/CategoryApi/CategoryApi.csproj", "src/CategoryApi/"]
+RUN dotnet restore "src/CategoryApi/CategoryApi.csproj"
 COPY . .
-WORKDIR "/src/src/Gateway"
-RUN dotnet build "Gateway.csproj" -c Release -o /app/build
+WORKDIR "/src/src/CategoryApi"
+RUN dotnet build "CategoryApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Gateway.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "CategoryApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CodeAcademy.Gateway.dll"]
+ENTRYPOINT ["dotnet", "CodeAcademy.CategoryApi.dll"]

@@ -1,0 +1,26 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "categoryapi",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "categoryapi",
+          "Version": "1",
+          "Url": "http://categoryapi/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "productapi",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "productapi",
+          "Version": "1",
+          "Url": "http://productapi/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

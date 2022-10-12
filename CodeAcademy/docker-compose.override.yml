@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  #code.db:
+  #  container_name: code.db
+  #  restart: always
+  #  ports:
+  #    - "1433:1433"
+  #  volumes:
+  #    - code_database_volume:/var/opt/mssql
+  #  environment:
+  #    - ACCEPT_EULA=Y
+  #    - SA_PASSWORD=Pa$$word1
+
+  gateway:
+    container_name: code.gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_GATEWAY_PORT} 
+      - ASPNETCORE_URL=${ASPNETCORE_URL}
+    ports:
+      - "${CODEACADEMY_GATEWAY_PORT}:80"
+
+  categoryapi:
+    container_name: code.categoryapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_CATEGORY_PORT}
+      - ASPNETCORE_URL=${ASPNETCORE_URL}
+    ports:
+      - "${CODEACADEMY_CATEGORY_PORT}:80"
+
+  productapi:
+    container_name: code.productapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_PRODUCT_PORT}
+      - ASPNETCORE_URL=${ASPNETCORE_URL}
+    ports:
+      - "${CODEACADEMY_PRODUCT_PORT}:80"

@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  #code.db:
+  #  image: mcr.microsoft.com/mssql/server:2019-latest
+  #  networks:
+  #   - network1
+
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    build:
+      context: .
+      dockerfile: src/Gateway/Dockerfile
+    networks:
+     - network1
+
+
+  categoryapi:
+    image: ${DOCKER_REGISTRY-}categoryapi
+    build:
+      context: .
+      dockerfile: src/CategoryApi/Dockerfile
+    networks:
+     - network1
+
+  productapi:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: src/ProductApi/Dockerfile
+    networks:
+     - network1    
+
+
+volumes:
+  code_database_volume:     
+
+networks:
+  network1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
+          gateway: 172.21.0.1

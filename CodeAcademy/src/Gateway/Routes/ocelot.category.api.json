@@ -1,0 +1,17 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/categories",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "categoryapi",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "categoryapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/v1/categories",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}

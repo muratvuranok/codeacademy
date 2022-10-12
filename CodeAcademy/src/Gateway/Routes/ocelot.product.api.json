@@ -1,0 +1,17 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/products",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "productsapi",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productsapi",
+          "Port": 1902
+        }
+      ],
+      "UpstreamPathTemplate": "/v1/products",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}
