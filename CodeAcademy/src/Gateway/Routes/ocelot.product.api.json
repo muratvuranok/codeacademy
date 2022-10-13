@@ -3,11 +3,11 @@
     {
       "DownstreamPathTemplate": "/api/v1/products",
       "DownstreamScheme": "http",
-      "SwaggerKey": "productsapi",
+      "SwaggerKey": "productapi",
       "DownstreamHostAndPorts": [
         {
-          "Host": "productsapi",
-          "Port": 1902
+          "Host": "productapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/v1/products",

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="metin"></p>
+    <button id="tikla"> Click</button>
+    <script>
+
+
+        // document.getElementById("tikla")
+        //     .addEventListener("click", function () {
+        //         alert("Mesaj")
+        //     });
+
+
+        function Mesaj() {
+            document.getElementById("metin").innerHTML = "Bilge Adam";
+        }
+
+        document.getElementById("tikla").addEventListener("click", Mesaj);
+
+
+    </script>
+</body>
+
+</html>

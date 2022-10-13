@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" id="btn1" class="btn btn-outline-dark">length</button>
+                <button type="button" id="btn2" class="btn btn-outline-dark">includes</button>
+                <button type="button" id="btn3" class="btn btn-outline-dark">concat</button>
+                <button type="button" id="btn4" class="btn btn-outline-dark">entries</button>
+                <button type="button" id="btn5" class="btn btn-outline-dark">forEach</button>
+                <button type="button" id="btn6" class="btn btn-outline-dark">pop</button>
+                <button type="button" id="btn7" class="btn btn-outline-dark">shift</button>
+                <button type="button" id="btn8" class="btn btn-outline-dark">push</button>
+                <button type="button" id="btn9" class="btn btn-outline-dark">unshift</button>
+                <button type="button" id="btn10" class="btn btn-outline-dark">splice</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // Butona tıkladığımızda çalışmasını istedğimiz kodlar
+    // document.getElementById("btn1").onclick = function () { }
+    // document.getElementById("btn2").addEventListener("click", function () { alert("test") })
+    // document.getElementById("btn3").addEventListener("mouseover", function () { alert("test") });
+
+    // c# tanımlama şekli => string[] sehirler = {'ankara', 'edirne', 'istanbul', 'muş', 'düzce', 'maraş', 'van'};
+
+    // javascrit tanımlama şekli
+    var sehirler = ['ankara', 'edirne', 'istanbul', 'muş', 'düzce', 'maraş', 'van'];
+
+    document.getElementById("btn1").onclick = function () {
+        alert(sehirler.length); // .length => dizinin uzunluğunu teslim eder
+    }
+
+    document.getElementById("btn2").onclick = function () {
+
+        // includes = contains // dizi içerisinde eleman yer almaktamıdır true false döner
+        if (sehirler.includes("Eskişehir")) {
+            alert("dizi içerisinde yer almaktadır");
+        }
+        else {
+            alert("dizi içerisinde yer almamaktadır");
+        }
+    }
+
+    var cities = ["Paris", "Köln"];
+    document.getElementById("btn3").onclick = function () {
+
+        // concat iki diziyi birbirine ekler ve size bir kopyasını teslim eder
+        var result = sehirler.concat(cities);
+        console.log(result)
+    }
+
+    var sonraki = sehirler.entries()
+    document.getElementById("btn4").onclick = function () {
+        // entries() dizi içerisindeki elemanları teslim eder, her bir eleman ulaşabilmek için eleman.nex().value diyerek her tıkladığımızda bir sonraki elemanı index değeri ile birlikte teslim alırız.
+        var item = sonraki.next().value;
+        if (item != null)
+            console.log(item)
+        else {
+            alert("Son elememana ulaşıldı");
+            return;
+        }
+    }
+
+    document.getElementById("btn5").onclick = function () {
+        sehirler.forEach(function (value, index) {
+            alert(index + " - " + value);
+        })
+    }
+
+    document.getElementById("btn6").onclick = function () {
+        if (sehirler.length > 0) {
+            // pop metodu dizinin en son elemanından silme işlemi yapar, geriye sildiği elemanı teslim eder.
+            var item = sehirler.pop();
+            console.log(sehirler);
+            console.log(item);
+        } else {
+            alert("dizi içerisinde silinecek eleman mevcut değildir");
+        }
+    }
+
+    document.getElementById("btn7").onclick = function () {
+        if (sehirler.length > 0) {
+            // shift metodu, dizinin ilk elemanından başlayarak silme işlemi gerçekleştirir ve geriye silinen elemanı teslim eder
+            var item = sehirler.shift();
+            console.log(sehirler);
+            console.log(item);
+        } else {
+            alert("dizi içerisinde silinecek eleman mevcut değildir");
+        }
+    }
+
+    document.getElementById("btn8").onclick = function () {
+        sehirler.push("Eskişehir"); // diziye eleman eklemek için push metodu kullanılır. (dizinin en sonuna eleman ekler)
+        alert("Eskişehir dizi içerisine eklenmiştir");
+        console.log(sehirler);
+    }
+
+    document.getElementById("btn9").onclick = function () {
+        // diziye eleman eklemek için kullanılır . push() => dizinin sonuna ekler,  unshift() => dizinin başına ekler
+        var result = sehirler.unshift("paris", "köln");
+        console.log(sehirler)
+        console.log(result)
+
+        // unshif  => dizinin başına ekler
+        // push    => dizinin sonuna ekler
+        // shift   => dizinin başından siler
+        // pop     => dizinin sonundan siler
+    }
+
+    document.getElementById("btn10").onclick = function () {
+        var array = ["one", "two", "four", "five"];
+        // splice(position, numberOfItemsToRemove, item)
+        // splice metodu ile dizi içerisinde belirli bir pozisyona eleman ekleyebilirsiniz. ilk parametre başlangıç index'i, ikinci parametre o index değerinden başlayarak kaç eleman silinecek, sonraki parametreler o index değerinden başlayarak dizi içerisine ekleyecektir.
+        array.splice(2, 0, "three"); 
+        console.log(array)
+    }
+</script>

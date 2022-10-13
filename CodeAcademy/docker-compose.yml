@@ -1,10 +1,13 @@
 version: '3.4'
 
 services:
-  #code.db:
-  #  image: mcr.microsoft.com/mssql/server:2019-latest
-  #  networks:
-  #   - network1
+  code.db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - network1
+
+  rabbitmq:
+    image: rabbitmq:3.8.14-management
 
   gateway:
     image: ${DOCKER_REGISTRY-}gateway
@@ -12,16 +15,19 @@ services:
       context: .
       dockerfile: src/Gateway/Dockerfile
     networks:
-     - network1
-
+      - network1
 
   categoryapi:
     image: ${DOCKER_REGISTRY-}categoryapi
     build:
       context: .
       dockerfile: src/CategoryApi/Dockerfile
+
     networks:
-     - network1
+      - network1
+
+    depends_on:
+      - code.db
 
   productapi:
     image: ${DOCKER_REGISTRY-}productapi
@@ -29,11 +35,24 @@ services:
       context: .
       dockerfile: src/ProductApi/Dockerfile
     networks:
-     - network1    
+      - network1
+    depends_on:
+      - rabbitmq
 
+  productconsumerservice:
+    image: ${DOCKER_REGISTRY-}productconsumerservice
+    build:
+      context: .
+      dockerfile: src/ProductConsumerService/Dockerfile
+    networks:
+      - network1
+    depends_on:
+      - productapi
+      - rabbitmq
 
 volumes:
-  code_database_volume:     
+  code_database_volume:
+
 
 networks:
   network1:

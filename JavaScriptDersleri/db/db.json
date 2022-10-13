@@ -1,0 +1,504 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "CategoryName": "Giyim & Ayakkabı",
+      "MasterId": "null"
+    },
+    {
+      "id": 2,
+      "CategoryName": "Elektronik",
+      "MasterId": "null"
+    },
+    {
+      "id": 3,
+      "CategoryName": "Ev & Yaşam",
+      "MasterId": "null"
+    },
+    {
+      "id": 4,
+      "CategoryName": "Anne & Bebek",
+      "MasterId": "null"
+    },
+    {
+      "id": 5,
+      "CategoryName": "Kozmetik & Kişisel Bakım",
+      "MasterId": "null"
+    },
+    {
+      "id": 6,
+      "CategoryName": "Mücevher & Saat",
+      "MasterId": "null"
+    },
+    {
+      "id": 7,
+      "CategoryName": "Spor & Outdoor",
+      "MasterId": "null"
+    },
+    {
+      "id": 8,
+      "CategoryName": "Kitap, Müzik, Film, Oyun",
+      "MasterId": "null"
+    },
+    {
+      "id": 9,
+      "CategoryName": "Bilet, Tatil & Eğlence",
+      "MasterId": "null"
+    },
+    {
+      "id": 10,
+      "CategoryName": "Otomotiv & Motosiklet",
+      "MasterId": "null"
+    },
+    {
+      "id": 11,
+      "CategoryName": "Ayakkabı & Çanta",
+      "MasterId": 1
+    },
+    {
+      "id": 12,
+      "CategoryName": "Kadın Giyim & Aksesuar",
+      "MasterId": 1
+    },
+    {
+      "id": 13,
+      "CategoryName": "Ayakkabı Bakım Ürünleri",
+      "MasterId": 11
+    },
+    {
+      "id": 14,
+      "CategoryName": "Telefon & Aksesuarları",
+      "MasterId": 2
+    },
+    {
+      "id": 15,
+      "CategoryName": "Bilgisayar",
+      "MasterId": 2
+    },
+    {
+      "id": 16,
+      "CategoryName": "Televizyon & Ses Sistemleri",
+      "MasterId": 2
+    },
+    {
+      "id": 17,
+      "CategoryName": "Elektrikli Ev Aletleri",
+      "MasterId": 2
+    },
+    {
+      "id": 18,
+      "CategoryName": "Beyaz Eşya",
+      "MasterId": 2
+    },
+    {
+      "id": 19,
+      "CategoryName": "Fotoğraf & Kamera",
+      "MasterId": 2
+    },
+    {
+      "id": 20,
+      "CategoryName": "Fitness & Kondisyon",
+      "MasterId": 7
+    },
+    {
+      "id": 21,
+      "CategoryName": "Spor Giyim & Ayakkabı",
+      "MasterId": 7
+    },
+    {
+      "id": 22,
+      "CategoryName": "Outdoor & Kamp",
+      "MasterId": 7
+    },
+    {
+      "id": 23,
+      "CategoryName": "Bireysel & Takım Sporları",
+      "MasterId": 7
+    },
+    {
+      "id": 24,
+      "CategoryName": "Avcılık & Balıkçılık",
+      "MasterId": 7
+    },
+    {
+      "id": 25,
+      "CategoryName": "Kış Sporları",
+      "MasterId": 7
+    },
+    {
+      "id": 26,
+      "CategoryName": "Bisiklet & Scooter",
+      "MasterId": 7
+    },
+    {
+      "id": 27,
+      "CategoryName": "Tekne & Yat Malzemeleri",
+      "MasterId": 7
+    },
+    {
+      "id": 28,
+      "CategoryName": "Su Sporları",
+      "MasterId": 7
+    },
+    {
+      "id": 29,
+      "CategoryName": "Erkek Giyim & Aksesuar",
+      "MasterId": 1
+    },
+    {
+      "id": 30,
+      "CategoryName": "Çocuk Giyim & Aksesuar",
+      "MasterId": 1
+    },
+    {
+      "id": 31,
+      "CategoryName": "Güneş Gözlüğü",
+      "MasterId": 1
+    },
+    {
+      "id": 32,
+      "CategoryName": "Düğün,Davet,Organizasyon",
+      "MasterId": 1
+    },
+    {
+      "id": 33,
+      "CategoryName": "Uçak Bileti",
+      "MasterId": 9
+    },
+    {
+      "id": 34,
+      "CategoryName": "Tatil & Eğlence",
+      "MasterId": 9
+    },
+    {
+      "id": 35,
+      "CategoryName": "Bebek Bezi & Islak Mendil",
+      "MasterId": 4
+    },
+    {
+      "id": 36,
+      "CategoryName": "Bebek Giyim",
+      "MasterId": 4
+    },
+    {
+      "id": 37,
+      "CategoryName": "Hamile Giyim",
+      "MasterId": 4
+    },
+    {
+      "id": 38,
+      "CategoryName": "Bebek Arabaları",
+      "MasterId": 4
+    },
+    {
+      "id": 39,
+      "CategoryName": "Oto Koltuğu & Ana Kucağı",
+      "MasterId": 4
+    },
+    {
+      "id": 40,
+      "CategoryName": "Beslenme & Mama Sandalyesi",
+      "MasterId": 4
+    },
+    {
+      "id": 41,
+      "CategoryName": "Biberon ve Aksesuarları",
+      "MasterId": 4
+    },
+    {
+      "id": 42,
+      "CategoryName": "Emzirme Ürünleri",
+      "MasterId": 4
+    },
+    {
+      "id": 43,
+      "CategoryName": "Yürüteç & Yürüme Yardımcılarık",
+      "MasterId": 4
+    },
+    {
+      "id": 44,
+      "CategoryName": "Bebek Odası & Park Yatak",
+      "MasterId": 4
+    },
+    {
+      "id": 45,
+      "CategoryName": "Bebek Bakım & Sağlık",
+      "MasterId": 4
+    },
+    {
+      "id": 46,
+      "CategoryName": "Bebek Güvenlik",
+      "MasterId": 4
+    },
+    {
+      "id": 47,
+      "CategoryName": "Bebek Oyuncakları",
+      "MasterId": 4
+    },
+    {
+      "id": 48,
+      "CategoryName": "Banyo & Tuvalet",
+      "MasterId": 4
+    },
+    {
+      "id": 49,
+      "CategoryName": "Mobilya",
+      "MasterId": 3
+    },
+    {
+      "id": 50,
+      "CategoryName": "Dekorasyon & Aydınlatma",
+      "MasterId": 3
+    },
+    {
+      "id": 51,
+      "CategoryName": "Ev Tekstili",
+      "MasterId": 3
+    },
+    {
+      "id": 52,
+      "CategoryName": "Mutfak Gereçleri",
+      "MasterId": 3
+    },
+    {
+      "id": 53,
+      "CategoryName": "Bayo & Ev Gereçleri",
+      "MasterId": 3
+    },
+    {
+      "id": 54,
+      "CategoryName": "Yapı Market & Bahçe ",
+      "MasterId": 3
+    },
+    {
+      "id": 55,
+      "CategoryName": "Evcil Hayvan Ürünleri ",
+      "MasterId": 3
+    },
+    {
+      "id": 56,
+      "CategoryName": "Kırtasiye & Ofis",
+      "MasterId": 3
+    },
+    {
+      "id": 57,
+      "CategoryName": "Süper Market",
+      "MasterId": 3
+    },
+    {
+      "id": 58,
+      "CategoryName": "Parfüm & Deodorant",
+      "MasterId": 5
+    },
+    {
+      "id": 59,
+      "CategoryName": "Saç Bakım & Şekillendirme",
+      "MasterId": 5
+    },
+    {
+      "id": 60,
+      "CategoryName": "Yüz & Vücut Bakımı",
+      "MasterId": 5
+    },
+    {
+      "id": 61,
+      "CategoryName": "Makyaj",
+      "MasterId": 5
+    },
+    {
+      "id": 62,
+      "CategoryName": "Sağlık & Medikal Ürünler",
+      "MasterId": 5
+    },
+    {
+      "id": 63,
+      "CategoryName": "Erkek Bakım Ürünleri",
+      "MasterId": 5
+    },
+    {
+      "id": 64,
+      "CategoryName": "Ağız Diş & Banyo Ürünleri",
+      "MasterId": 5
+    },
+    {
+      "id": 65,
+      "CategoryName": "El Ayak Tırnak Bakımı",
+      "MasterId": 5
+    },
+    {
+      "id": 66,
+      "CategoryName": "Güneş & Bronzluk Ürünleri",
+      "MasterId": 5
+    },
+    {
+      "id": 67,
+      "CategoryName": "Güzellik Salonu & Kuaför Ürünleri",
+      "MasterId": 5
+    },
+    {
+      "id": 68,
+      "CategoryName": "Kitap",
+      "MasterId": 8
+    },
+    {
+      "id": 69,
+      "CategoryName": "Film",
+      "MasterId": 8
+    },
+    {
+      "id": 70,
+      "CategoryName": "Müzik",
+      "MasterId": 8
+    },
+    {
+      "id": 71,
+      "CategoryName": "Video Oyun & Konsol",
+      "MasterId": 8
+    },
+    {
+      "id": 72,
+      "CategoryName": "Çocuk Oyuncakları & Parti",
+      "MasterId": 8
+    },
+    {
+      "id": 73,
+      "CategoryName": "Yetişkin Hobi & Oyun",
+      "MasterId": 8
+    },
+    {
+      "id": 74,
+      "CategoryName": "Digital Kodlar & Ürünler",
+      "MasterId": 8
+    },
+    {
+      "id": 75,
+      "CategoryName": "İlginç & Akıllı Ürünler",
+      "MasterId": 8
+    },
+    {
+      "id": 76,
+      "CategoryName": "Aksesuar & Tuning",
+      "MasterId": 10
+    },
+    {
+      "id": 77,
+      "CategoryName": "Yedek Parça",
+      "MasterId": 10
+    },
+    {
+      "id": 78,
+      "CategoryName": "Ses Sistemleri & Navigasyon",
+      "MasterId": 10
+    },
+    {
+      "id": 79,
+      "CategoryName": "Lastik & Jant",
+      "MasterId": 10
+    },
+    {
+      "id": 80,
+      "CategoryName": "Motosiklet",
+      "MasterId": 10
+    },
+    {
+      "id": 81,
+      "CategoryName": "Traktör",
+      "MasterId": 10
+    },
+    {
+      "CategoryName": "Erkek Çanta",
+      "MasterId": "11",
+      "id": 82
+    },
+    {
+      "CategoryName": "Bavul & Valiz",
+      "MasterId": "11",
+      "id": 83
+    },
+    {
+      "CategoryName": "Çocuk Ayakkabı",
+      "MasterId": "11",
+      "id": 84
+    },
+    {
+      "CategoryName": "Kadın Çanta",
+      "MasterId": "11",
+      "id": 85
+    },
+    {
+      "CategoryName": "Kadın Ayakkabı",
+      "MasterId": "11",
+      "id": 86
+    },
+    {
+      "CategoryName": "Cep Telefonu",
+      "MasterId": "14",
+      "id": 87
+    },
+    {
+      "CategoryName": "Cep Telefonu Aksesuarları",
+      "MasterId": "14",
+      "id": 88
+    },
+    {
+      "CategoryName": "Yazılım",
+      "MasterId": "null",
+      "id": 89
+    },
+    {
+      "CategoryName": "C#",
+      "MasterId": "89",
+      "id": 90
+    },
+    {
+      "CategoryName": "Java",
+      "MasterId": "89",
+      "id": 91
+    },
+    {
+      "CategoryName": "Python",
+      "MasterId": "89",
+      "id": 92
+    },
+    {
+      "CategoryName": ".Net Framework",
+      "MasterId": "90",
+      "id": 93
+    },
+    {
+      "CategoryName": ".Net Core",
+      "MasterId": "90",
+      "id": 94
+    },
+    {
+      "CategoryName": ".net MVC",
+      "MasterId": "93",
+      "id": 95
+    },
+    {
+      "CategoryName": "Su",
+      "MasterId": "null",
+      "id": 96
+    },
+    {
+      "CategoryName": "Gazlı Su",
+      "MasterId": "96",
+      "id": 97
+    },
+    {
+      "CategoryName": "Gazsız Su",
+      "MasterId": "96",
+      "id": 98
+    },
+    {
+      "CategoryName": "Erikli",
+      "MasterId": "98",
+      "id": 99
+    },
+    {
+      "CategoryName": "Nestle",
+      "MasterId": "98",
+      "id": 100
+    }
+  ]
+}

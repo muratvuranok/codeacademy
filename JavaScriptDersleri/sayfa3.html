@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Lütfen birinci sayıyı giriniz : </label>
+    <br>
+    <input type="text" id="sayiBir">
+    <br>
+    <br>
+    <label for="">Lütfen ikinci sayıyı giriniz : </label>
+    <br>
+    <input type="text" id="sayiIki">
+    <br>
+    <br>
+    <button id="btnTopla"> Topla </button>
+
+    <script>
+
+        function Toplama(x, y) { 
+            return parseInt(x) + parseInt(y);
+        }
+
+        document.getElementById("btnTopla").addEventListener("click", function () {
+
+            const s1 = document.getElementById("sayiBir").value;
+            const s2 = document.getElementById("sayiIki").value;
+
+            var result = Toplama(s1 , s2);
+            alert(result);
+        })
+    </script>
+</body>
+
+</html>

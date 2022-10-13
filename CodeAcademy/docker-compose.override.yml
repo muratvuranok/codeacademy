@@ -1,22 +1,31 @@
 version: '3.4'
 
 services:
-  #code.db:
-  #  container_name: code.db
-  #  restart: always
-  #  ports:
-  #    - "1433:1433"
-  #  volumes:
-  #    - code_database_volume:/var/opt/mssql
-  #  environment:
-  #    - ACCEPT_EULA=Y
-  #    - SA_PASSWORD=Pa$$word1
+  code.db:
+    container_name: code.db
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - code_database_volume:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pa$$word1
+
+  rabbitmq:
+    container_name: code.rabbitmq
+    restart: always
+    ports:
+      - "${CODEACADEMY_RABBITMQ_SERVER_PORT}:${CODEACADEMY_RABBITMQ_SERVER_PORT}"
+      - "${CODEACADEMY_RABBITMQ_UI_PORT}:${CODEACADEMY_RABBITMQ_UI_PORT}"
+      - "5672:5672"
+      - "15672:15672"
 
   gateway:
     container_name: code.gateway
     environment:
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
-      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_GATEWAY_PORT} 
+      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_GATEWAY_PORT}
       - ASPNETCORE_URL=${ASPNETCORE_URL}
     ports:
       - "${CODEACADEMY_GATEWAY_PORT}:80"
@@ -38,3 +47,12 @@ services:
       - ASPNETCORE_URL=${ASPNETCORE_URL}
     ports:
       - "${CODEACADEMY_PRODUCT_PORT}:80"
+
+  productconsumerservice:
+    container_name: code.productconsumerservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_HTTP_PORT=${CODEACADEMY_PRODUCT_CONSUMER_PORT}
+      - ASPNETCORE_URL=${ASPNETCORE_URL}
+    ports:
+      - "${CODEACADEMY_PRODUCT_CONSUMER_PORT}:80"

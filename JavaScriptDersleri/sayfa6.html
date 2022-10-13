@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+        #sortable li {
+            margin: 0 3px 3px 3px;
+            padding: 0.4em;
+            padding-left: 1.5em;
+            font-size: 1.4em;
+            /* height: 18px; */
+        }
+
+        #sortable li span {
+            position: absolute;
+            margin-left: -1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Menu Düzenleme Ekranı</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto custom-menu">
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col ">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <a href="https://jqueryui.com/sortable/" target="_blank">https://jqueryui.com/sortable/</a>
+                        <hr>
+                        <ul id="sortable" class="main-menu list-group list-group-flush mt-5"></ul>
+                        <br />
+                        <button id="btnMenu" class="btn btn-outline-dark btn-sm  ">Menü Düzenle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            let menu = ["Anasayfa", "Hakkımızda", "Biz Kimiz", "Siz Kimsiniz", "Onlar Kim", "İletişim", "Galeri", "Referanslar"];
+            let navMenu = []
+            let mainMenu = []
+            for (var m in menu) {
+                navMenu.push('<li class="nav-item"> <a class="nav-link" href="#">' + menu[m] + '</a> </li>')
+                mainMenu.push('<li class="list-group-item main-li">' + menu[m] + '</li>')
+            }
+
+            $(".custom-menu").html(navMenu.join(""));
+            $(".main-menu").html(mainMenu.join(""));
+ 
+
+
+            $("#btnMenu").click(function () { 
+                var items = document.getElementsByClassName("main-li"); 
+                navMenu = [];
+                for (var i = 0; i < items.length; i++) {
+                    navMenu.push('<li class="nav-item"> <a class="nav-link" href="#">' + items[i].innerHTML + '</a> </li>') 
+                } 
+                $(".custom-menu").empty();
+                $(".custom-menu").html(navMenu.join("")); 
+            }) 
+
+
+            
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- .append() puts data inside an element at last index and
+.prepend() puts the prepending elem at first index -->
+
+<!-- https://medium.com/batech/stringbuilder-%C4%B1n-performansa-etkisi-ve-kullan%C4%B1m-deneyimi-2b7a30b70d7b -->

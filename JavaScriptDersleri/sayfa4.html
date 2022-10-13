@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+
+    <style type="text/css">
+        .metin {
+            width: 170px;
+            height: 150px;
+            -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+            float: left;
+            margin-right: 12px;
+            border-radius: 10px;
+            line-height: 150px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col "></div>
+            <div class="card card-default">
+                <div class="card-body">
+                    <p id="metin1" lang="tr" class="metin" style="background-color:#FFDC00;"></p>
+                    <p id="metin2" lang="en" class="metin" style="background-color:#FF851B;"></p>
+                    <p id="metin3" lang="tr" class="metin" style="background-color:#FF4136;"></p>
+                    <p id="BaMetin4" lang="fr" class="metin" style="background-color:#01FF70;"></p>
+                    <p id="metin5" lang="tr" class="metin" style="background-color:#F012BE;"></p>
+                    <p id="BaMetin6" lang="en" class="metin" style="background-color:#39CCCC;"></p>
+                </div>
+            </div>
+        </div>
+        <figure>
+            <pre>
+                <span>
+                   http://api.jquery.com/category/selectors/ adresinden tum selector'leri girebilirsiniz...
+                    </span>     
+                <br />
+                <span id="metin">                        
+                    </span>
+                </pre>
+        </figure>
+        <div class="col">
+            <div class="card card-default">
+                <div class="card-body">
+
+                    <div class="btn-group btn-group-justified">
+                        <button id="bir" class="btn btn-outline-dark">Örnek Bir</button>
+                        <button id="iki" class="btn btn-outline-dark">Örnek Iki</button>
+                        <button id="uc" class="btn btn-outline-dark">Örnek Üç</button>
+                        <button id="dort" class="btn btn-outline-dark">Örnek Dört</button>
+                        <button id="bes" class="btn btn-outline-dark">Örnek Bes</button>
+                        <button id="alti" class="btn btn-outline-dark">Örnek Alti</button>
+                        <button id="yedi" class="btn btn-outline-dark">Örnek Yedi</button>
+                        <button id="sekiz" class="btn btn-outline-dark">Örnek Sekiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            // document.getElementById("bir").addEventListener("click",function(){})
+            $("#bir").click(function () {
+
+                $("p").html("");
+                // $("p").empty();
+
+
+                $("#metin").html("Sayfa üzerindeki tüm 'p' etiketlerinin HTML içeriğine 'Hello Wolrd' yazdıralım");
+                $("p").html("Hello World");
+            })
+
+
+            $("#iki").click(function () {
+
+                $("p").html("");
+                $("#metin").html("Sayfa üzerindeki id değeri 'metin1' olan etiketin HTML içeriğine 'Hello Wolrd' yazdıralım");
+                $("#metin1").html("Hello JQUERY");
+            })
+
+
+            $("#uc").click(function () {
+
+                $("p").html("");
+                $("#metin").html("Sayfa üzerindeki id değeri 'metin1 ve metin2' olan etiketlerin HTML içeriğine 'Hello JQUERY' yazdıralım");
+                $("#metin1,#metin2").html("Hello JQUERY");
+            })
+
+
+            $("#dort").click(function () {
+                $("p").html("");
+                // $("#metin").html("Sayfa üzerindeki lang attribute değeri 'tr ve en' olan etiketlerin HTML içeriğine 'Hello Wolrd' yazdıralım") 
+                $("span[id='metin']").html("Sayfa üzerindeki lang attribute değeri 'tr ve en' olan etiketlerin HTML içeriğine 'Hello Wolrd' yazdıralım")
+                $("p[lang='tr'],[lang='en']").html("Hello World!")
+            })
+
+
+
+            $("#bes").click(function () {
+                $("p").html("");
+                $("#metin").html("'Lang' attribute'u 'en' ve 'id' attribute'u 'iki' olan elementin HTML icerigini degistirme"); 
+            })
+            $("#alti").click(function () { 
+                $('p').html('');
+                $("#metin").html("'id' attribute'u 'metin3' olmayan elementlerin HTML icerigine mudahele ");
+            }) 
+            $("#yedi").click(function () {
+                $('p').html('');
+                $("#metin").html("'id' attribute'u 'me' ile baslayan elementlerin HTML icerigine mudahele etme");
+            })
+            $("#sekiz").click(function () {
+                $('p').html('');
+
+                $("#metin").html("'id' attribute'u '6' ile biten elementlerin HTML icerigine mudahele etme");
+
+
+                console.log(document.getElementsByTagName("p"))
+            }) 
+        }) 
+    </script>
+</body>
+
+</html>

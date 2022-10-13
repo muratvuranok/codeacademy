@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <style>
+        .metin {
+            width: 170px;
+            height: 150px;
+            float: left;
+            margin-right: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: large;
+            line-height: 150px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col "></div>
+            <div class="card card-default">
+                <div class="card-body">
+                    <p class="metin" style="background-color:#ffdc00"></p>
+                    <p class="metin" style="background-color:#ff851b"></p>
+                    <p class="metin" style="background-color:#ff4136"></p>
+                    <p class="metin" style="background-color:#01ff70"></p>
+                    <p class="metin" style="background-color:#f012be"></p>
+                    <p class="metin" style="background-color:#39cccc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            var result = false;
+            // kullandığımız timer nesnelerini, global alanda, bir dizi içerisinde tutuyoruz.
+            var timers = []
+
+            $("p").click(function () {
+
+                if (result) { return; }
+                result = true;
+
+
+                // her tıkladığımızda dizi içerisinde yer alan timer'nesnelerini temizliyoruz. 
+                for (var i = 0; i < timers.length; i++) {
+                    clearInterval(timers[i]);
+                }
+
+
+                // tıkladığımız butonun arkaplan rengini yakalıyoruz. (not : javascript'de css yazılırken - kullanılmaz diğer kelime büyük harfle başlar ve bitişiktir.)
+                var color = $(this).css("backgroundColor");
+
+                // sayfa üzerinde yer alan p etiketlerinin arka plan renklerini tutmak için bir dizi tanımladık.
+                var colors = []
+
+
+                // sayfa üzerinde yer alan class'ı metin olan tüm p etketlerini yakalıyoruz
+                var items = document.getElementsByClassName("metin");
+
+                // döngü ile, etiketler içerisinde dönerek, yakaladığımız her bir elemanın arkaplan rengini dizi içerisine atıyoruz.
+                for (var i = 0; i < items.length; i++) {
+                    // push metodu, dizinin sonuna ekleme işlemi yapar.
+                    colors.push($(items[i]).css("backgroundColor"));
+                }
+
+
+                //tüm p etiketlerinin arka plan renklerini beyaz olarak değiştiriyoruz.
+                $("p").css("backgroundColor", "white");
+
+                // setInterval = timer
+                var index = 0;
+                var timer1 = setInterval(function () { 
+                    if (index == items.length) {
+                        clearInterval(timer1);
+                    }
+                    $(items[index]).css("backgroundColor", color);
+                    index++;
+                }, 500);
+                timers.push(timer1);
+
+                // verdiğiniz interval (milisaniye) değerine göre yazdığınız kod bloğunu tek bir defa tetikler.
+                setTimeout(function () {
+
+                    index = 0;
+                    var timer2 = setInterval(function () {
+         
+                        if (index == items.length) {
+                            clearInterval(timer2);
+                            result = false;
+                        }
+
+                        $(items[index]).css({
+                            "backgroundColor": colors[index],
+                            "fontSize": "15px",
+                        })
+                        index++;
+                    }, 500)
+                    timers.push(timer2);
+                }, (items.length * 600));
+
+            })
+        })
+    </script>
+</body>
+
+</html>

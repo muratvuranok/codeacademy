@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+    <!--
+https://www.npmjs.com/package/json-server    -> db için
+
+
+    -->
+    <div class="container-fluid">
+        <h1 class="text-center mt-5">The Panel </h1>
+        <div class="row mt-5">
+            <div class="col">
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="">Kategori Adı : <span id="cname"></span></label>
+                        <input type="text" class="form-control" id="CategoryName" name="CategoryName">
+                        <input type="hidden" id="MasterId" name="MasterId" value="null">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-outline-danger btn-sm" type="reset"> Temizle</button>
+                        <button id="btnKaydet" class="btn btn-outline-dark btn-sm" type="button"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-5 n-menu">
+        </div>
+
+        <footer class="mt-4">
+            copyright 2020 by Metehan
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            function Template(id) {
+                $.getJSON("http://localhost:3000/categories?MasterId=" + id, function (data) {
+                    if (data.length > 0) {
+                        var template = [];
+                        var count = document.getElementsByClassName("n-list").length;
+                        template.push(`<div class="col-3"><ul class="n-list list-group list-group-flush  border  rounded shadow-sm p-3"  data-order="${count}">`)
+                        $.each(data, function (key, value) {
+                            template.push(`<li class="list-group-item main-li"> <a class="categories" href="#" data-id="${value.id}">${value.CategoryName}</a> <a href="#" class="btn float-right btn-sm delete" data-id=${value.id}> <i class="fas fa-trash text-danger"></i></a></li>`)
+                        })
+                        template.push(`</ul></div>`);
+                        $(".n-menu").append(template.join(""))
+                    }
+                })
+            };
+
+            Template("null");
+
+
+            $(document).on("click", ".categories", function () {
+                var item = $(this).text(); // tıkladığımız a etiketinin text'inde yer alan yazıyı teslim alıyoruz
+                $("#cname").text(item);    // label içerisinde yer alan, span etiketine kategorinin adını yazdırıyoruz
+
+                var id = $(this).data("id");
+                $("#MasterId").val(id);
+
+                var order = $(this).parent("li").parent("ul").data("order");
+
+                for (var i = (order + 1); i <= document.getElementsByClassName("n-list").length; i++) {
+                    var div = $("ul[data-order='" + i + "']").parent("div");
+                    div.remove();
+                }
+                Template(id);
+            })
+
+
+            $("#btnKaydet").click(function () {
+
+                $.ajax({
+                    url: "http://localhost:3000/categories",
+                    type: "post",
+                    dataType: "json",
+                    data: $("form").serialize(),
+                    success: function () {
+                        $("form")[0].reset();
+                        $("#MasterId").val("null")
+                    },
+                    error: function () { }
+                })
+            })
+
+
+            $(document).on("click", ".delete", function () {
+                var id = $(this).data("id");
+                $.ajax({
+                    url: "http://localhost:3000/categories/" + id,
+                    type: "delete",
+                    dataType: "json",
+                    success: function () {
+                        $("form")[0].reset();
+                    },
+                    error: function () { }
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

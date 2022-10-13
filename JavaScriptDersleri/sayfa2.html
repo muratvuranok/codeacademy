@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Adı : </label>
+    <input type="text" id="firstname">
+
+    <br>
+    <label for="">Soyadı : </label>
+    <input type="text" id="lastname">
+
+    <br>
+    <label for="" id="mail"></label>
+
+    <br>
+    <button id="btnMail"
+        onclick="Mail(document.getElementById('firstname').value,document.getElementById('lastname').value)">Mail
+        Oluştur</button>
+    <script>
+
+        function Mail() {
+            const isim = document.getElementById("firstname").value;
+            const soyisim = document.getElementById("lastname").value;
+            let mail = `${isim.toLowerCase()}.${soyisim.toLowerCase()}@bilgeadam.com`;
+            document.getElementById("mail").innerHTML = mail;
+        }
+
+        function Mail(f, l) {
+            let mail = `${f.toLowerCase()}.${l.toLowerCase()}@bilgeadam.com`;
+            document.getElementById("mail").innerHTML = mail;
+        }
+
+        // document.getElementById("btnMail").addEventListener("click", Mail);
+
+    </script>
+</body>
+
+</html>
