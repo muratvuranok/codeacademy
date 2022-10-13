@@ -10,7 +10,7 @@ public class ProductConsumer : IConsumer<Product>
     }
     public async Task Consume(ConsumeContext<Product> context)
     {
-        await Console.Out.WriteAsync(context.Message.Name);
-        _logger.LogInformation(context.Message.Name);
+        await Console.Out.WriteAsync(context.Message.ProductName);
+        _logger.LogInformation(context.Message.ProductName);
     }
 }

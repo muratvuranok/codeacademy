@@ -1,6 +1,9 @@
+﻿using CodeAcademy.ProductService;
 using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.ProductServiceConfiguration(builder.Configuration);
 
 
 builder.Services.AddMassTransit(config =>
@@ -17,8 +20,11 @@ builder.Services.AddMassTransit(config =>
 });
 
 
-var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
-
+var app = builder.Build(); 
+app.MapGet("/", () => "Hello World!"); 
 app.Run();
+
+// sln dizininde calistiriniz
+
+// dotnet ef migrations add initialize --project   src\ProductService --startup-project     src\ProductConsumerService --output-dir   src\ProductService/Migrations
+// dotnet ef database update --project   src\ProductService --startup-project     src\ProductConsumerService

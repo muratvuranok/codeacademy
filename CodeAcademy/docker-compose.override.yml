@@ -10,14 +10,14 @@ services:
       - code_database_volume:/var/opt/mssql
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Pa$$word1
+      - SA_PASSWORD=Pro247!!
 
   rabbitmq:
     container_name: code.rabbitmq
     restart: always
     ports:
-      - "${CODEACADEMY_RABBITMQ_SERVER_PORT}:${CODEACADEMY_RABBITMQ_SERVER_PORT}"
-      - "${CODEACADEMY_RABBITMQ_UI_PORT}:${CODEACADEMY_RABBITMQ_UI_PORT}"
+      #- "${CODEACADEMY_RABBITMQ_SERVER_PORT}:${CODEACADEMY_RABBITMQ_SERVER_PORT}"
+      #- "${CODEACADEMY_RABBITMQ_UI_PORT}:${CODEACADEMY_RABBITMQ_UI_PORT}"
       - "5672:5672"
       - "15672:15672"
 
