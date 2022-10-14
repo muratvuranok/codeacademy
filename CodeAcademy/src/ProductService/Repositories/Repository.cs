@@ -23,6 +23,6 @@ public class Repository<T> : IRepository<T> where T : class
         await _context.SaveChangesAsync();
         return entities;
     }
-
-
+     
+    public virtual IQueryable<T> Table => _context.Set<T>();
 }
