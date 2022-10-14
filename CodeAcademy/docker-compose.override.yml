@@ -12,7 +12,7 @@ services:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Pro247!!
 
-  rabbitmq:
+  code_rabbitmq:
     container_name: code.rabbitmq
     restart: always
     ports:
@@ -54,5 +54,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
       - ASPNETCORE_HTTP_PORT=${CODEACADEMY_PRODUCT_CONSUMER_PORT}
       - ASPNETCORE_URL=${ASPNETCORE_URL}
+      - ConnectionStrings:DefaultConnection=${ConnectionStrings}
     ports:
       - "${CODEACADEMY_PRODUCT_CONSUMER_PORT}:80"
+
+ 

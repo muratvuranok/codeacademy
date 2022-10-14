@@ -6,8 +6,10 @@ services:
     networks:
       - network1
 
-  rabbitmq:
+  code_rabbitmq:
     image: rabbitmq:3.8.14-management
+    networks:
+      - network1
 
   gateway:
     image: ${DOCKER_REGISTRY-}gateway
@@ -22,10 +24,8 @@ services:
     build:
       context: .
       dockerfile: src/CategoryApi/Dockerfile
-
     networks:
-      - network1
-
+      - network1 
     depends_on:
       - code.db
 
@@ -47,6 +47,7 @@ services:
     networks:
       - network1
     depends_on:
+      - code.db
       - productapi
       - rabbitmq
 

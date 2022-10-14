@@ -22,7 +22,7 @@ docker rm code.gateway
 
 # remove images
 
-docker rmi $(docker images 'db' -a -q)
+docker rmi $(docker images 'core.db' -a -q)
 docker rmi $(docker images 'rabbitmq' -a -q)
 docker rmi $(docker images 'productconsumerservice' -a -q)
 docker rmi $(docker images 'productapi' -a -q)
@@ -42,3 +42,6 @@ docker-compose --env-file ./config/.env.dev up -d --build
 
 
 # docker volume rm --filter "name!=portainer_portainer-docker-extension-desktop-extension_portainer_data"
+
+# migrate database
+dotnet ef database update --project src\ProductService --startup-project src\ProductConsumerService

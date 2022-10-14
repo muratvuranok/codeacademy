@@ -1,16 +1,23 @@
-﻿using MassTransit;
+﻿using CodeAcademy.ProductService.Services;
+using MassTransit;
 using Models;
+
+
+namespace CodeAcademy.ProductService;
 
 public class ProductConsumer : IConsumer<Product>
 {
     private ILogger<ProductConsumer> _logger;
-    public ProductConsumer(ILogger<ProductConsumer> logger = null)
+    private readonly IProductRepository _productRepository;
+    public ProductConsumer(ILogger<ProductConsumer> logger = null, IProductRepository productRepository = null)
     {
-        _logger = logger;
+        this._logger = logger;
+        this._productRepository = productRepository;
     }
+
     public async Task Consume(ConsumeContext<Product> context)
     {
         await Console.Out.WriteAsync(context.Message.ProductName);
-        _logger.LogInformation(context.Message.ProductName);
+        var result = await _productRepository.Create(context.Message);
     }
 }

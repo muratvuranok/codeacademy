@@ -13,7 +13,7 @@ public static class GlobalConfiguration
     {
         services.AddDbContext<ApplicationDbContext>(option => option
         .UseSqlServer(configuration
-        .GetConnectionString("default"), builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+        .GetConnectionString("DefaultConnection"), builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
 
         services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

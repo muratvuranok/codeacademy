@@ -13,6 +13,16 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<T> Create(T entity)
     {
         await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
         return entity;
     }
+
+    public async Task<IEnumerable<T>> Create(IEnumerable<T> entities)
+    {
+        await _context.Set<T>().AddRangeAsync(entities);
+        await _context.SaveChangesAsync();
+        return entities;
+    }
+
+
 }

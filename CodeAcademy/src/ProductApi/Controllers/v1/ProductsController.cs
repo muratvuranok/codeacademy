@@ -29,6 +29,18 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] Product product)
     {
+        //for (int i = 1; i < 50000; i++)
+        //{
+        //    var entity = new Product
+        //    {
+        //        ProductName = $"{product.ProductName} -> {i}",
+        //        UnitPrice = product.UnitPrice,
+        //        UnitsInStock = product.UnitsInStock
+        //    };
+
+        //    await _publishEndpoint.Publish<Product>(entity);
+        //}
+
         await _publishEndpoint.Publish<Product>(product);
         return Ok(new
         {

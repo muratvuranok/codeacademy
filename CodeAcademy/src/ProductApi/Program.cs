@@ -13,7 +13,7 @@ builder.Services.AddMassTransit(config =>
 {
     config.UsingRabbitMq((ctx, cnf) =>
     {
-        cnf.Host("amqp://guest:guest@localhost:5672");
+        cnf.Host("amqp://guest:guest@code_rabbitmq:5672");
     });
 });
   
